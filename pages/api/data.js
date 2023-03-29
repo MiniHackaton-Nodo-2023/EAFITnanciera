@@ -73,12 +73,13 @@ export default {
         {
             id: 1,
             title: "Ahorro",
-            subtitle: "",
+            subtitle: "Ahorro",
             category: "Análisis, Finanzas",
             img: "/images/articles/img1.jpg",
             description: `
             Trata sobre ahorrar.
             `,
+            requirements: ['Querer aprender a ahorrar', 'Voluntad para adquirir conceptos básicos', 'Ganas de iniciar'],
             published: "Jul 3,  2023",
             author: {
                 name: "Andrés Felipe Puerta Vélez",
@@ -91,11 +92,11 @@ export default {
             title: "Presupuesto II",
             subtitle: "",
             category: "Análisis, Finanzas",
-            img: "/images/articles/img1.jpg",
+            img: "/images/articles/img2.jpg",
             description: `
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
-            far World of Grammar.
+            Lorem
             `,
+            requirements: ['Querer aprender a ahorrar', 'Voluntad para adquirir conceptos básicos', 'Ganas de iniciar'],
             published: "Mar 31,  2023",
             author: {
                 name: "Mark Cuban",
@@ -108,7 +109,7 @@ export default {
             title: "Inversión",
             subtitle: "",
             category: "Análisis, Finanzas",
-            img: "/images/articles/img1.jpg",
+            img: "/images/articles/img3.jpg",
             description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.
@@ -125,7 +126,7 @@ export default {
             title: "Deudas",
             subtitle: "",
             category: "Análisis, Finanzas",
-            img: "/images/articles/img1.jpg",
+            img: "/images/articles/img5.png",
             description: `
             Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
             far World of Grammar.

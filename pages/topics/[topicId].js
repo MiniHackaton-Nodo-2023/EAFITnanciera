@@ -26,12 +26,11 @@ export default function Page({ fallback }) {
 
 }
 
-function Article({ title, img, subtitle, description, author }) {
+function Article({ title, img, requirements, subtitle, description, author }) {
 
     return (
         <Format>
             <section className='container mx-auto md:px-2 py-16 w-1/2'>
-                <h1>Requerimientos</h1>
                 <div className='flex justify-center'>
                     {author ? <Author {...author}></Author> : <></>}
                 </div>
@@ -44,7 +43,12 @@ function Article({ title, img, subtitle, description, author }) {
                     <div className="py-10">
                         <Image src={img || "/"} width={900} height={600} alt="Card Image"></Image>
                     </div>
+                    <h1 className='font-bold text-4xl text-center pb-5'>Requerimientos:</h1>
+                    {
+                        requirements.map(item => <li key={item}>{item}</li>)
+                    }
 
+                    <h1 className='font-bold text-4xl text-center pb-5'>Descripción</h1>
                     <div className="content text-gray-600 text-lg flex flex-col gap-4">
                         {description || "No Description"}
                     </div>
