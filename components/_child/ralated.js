@@ -14,7 +14,7 @@ export default function Ralated() {
 
     return (
         <section className="pt-20">
-            <h1 className="font-bold text-3xl py-10">Related</h1>
+            <h1 className="font-bold text-3xl py-10">Publicaciones relacionadas</h1>
 
             <div className="flex flex-col gap-10">
                 {
