@@ -1,5 +1,24 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
+    Quotes: [
+        {
+            id: 1,
+            title: "Frase de la Roca",
+            subtitle: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+            category: "HTB, CTF",
+            img: "/images/theRockSuit.jpg",
+            description: `
+            "Si estas esperando que la luz de tráfico cambie a verde, este portal
+            de educación financiera es la luz verde".
+            `,
+            published: "Jul 3,  2022",
+            author: {
+                name: "La Roca lo dijo",
+                img: "/images/TheRock.webp",
+                designation: "Pentester"
+            }
+        }
+    ],
     Trending: [
         {
             id: 1,
@@ -278,7 +297,7 @@ export default {
     Popular: [
         {
             id: 1,
-            title: "Your most unhappy customers are your greatest source of learning",
+            title: "Lo mejor es tomar agua",
             subtitle: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
             category: "HTB, CTF",
             img: "/images/articles/img1.jpg",

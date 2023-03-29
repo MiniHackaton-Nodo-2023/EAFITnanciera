@@ -19,7 +19,7 @@ export default function footer() {
             <Link href={"/"}><a><ImYoutube color="#888888" /></a></Link>
           </div>
 
-          <p className="py-5 text-gray-400">Copyright © 2022 Youngermaster</p>
+          <p className="py-5 text-gray-400">Copyright © 2023 EAFITNanciera</p>
         </div>
       </div>
 

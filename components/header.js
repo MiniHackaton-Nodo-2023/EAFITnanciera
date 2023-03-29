@@ -7,17 +7,17 @@ export default function header() {
             <div className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center py-3">
                 <div className="md:flex-none w-96 order-2 sm:order-1 flex justify-center py-4 sm:py-0">
                     <div className="flex gap-6">
-                        <Link href="https://jmyounghoyos.com/">
-                            <a className="uppercase text-1xl">main page</a>
-                        </Link>
                         <Link href={"/"}>
                             <a className="uppercase text-1xl">Blog</a>
+                        </Link>
+                        <Link href={"/"}>
+                            <a className="uppercase text-1xl">Temario</a>
                         </Link>
                     </div>
                 </div>
                 <div className="shrink w-180 sm:order-2">
                     <Link href={"/"}>
-                        <a className="font-bold uppercase text-3xl">Juan Manuel Young Hoyos</a>
+                        <a className="font-bold uppercase text-3xl">EAFITNanciera</a>
                     </Link>
                 </div>
                 <div className="w-96 order-3 flex justify-center">
