@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 
 export default function Section3() {
-    const [quotes, setQuotes] = useState([]);
+    const [courses, setCourses] = useState([]);
     const [isLoadingQuotes, setIsLoadingQuotes] = useState(false);
     const [isErrorQuotes, setIsErrorQuotes] = useState(false);
 
@@ -18,16 +18,14 @@ export default function Section3() {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
-    let myQuotes = []
-
     useEffect(() => {
         const fetchQuotes = async () => {
             setIsLoadingQuotes(true);
             setIsErrorQuotes(false);
             try {
-                const response = await fetch('http://localhost:3000/api/quotes');
+                const response = await fetch('http://localhost:3000/api/courses');
                 const data = await response.json();
-                setQuotes(data);
+                setCourses(data);
             } catch (error) {
                 setIsErrorQuotes(true);
             }
@@ -61,7 +59,7 @@ export default function Section3() {
     // if (isLoading) return <Spinner></Spinner>;
     // if (isError) return <Error></Error>
 
-    return (
+    return courses && data ? (
         <section className="container mx-auto md:px-20 py-16">
             <h1 className="font-bold text-4xl py-12 text-center">Nuestros Temarios</h1>
 
@@ -69,20 +67,19 @@ export default function Section3() {
             <Swiper
                 breakpoints={{
                     640: {
-                        slidesPerView: 2,
+                        slidesPerView: 4,
                         spaceBetween: 30
                     }
                 }}
             >
                 {
-                    data.map((value, index) => (
+                    courses.map((value, index) => (
                         <SwiperSlide key={index}><Post data={value}></Post></SwiperSlide>
                     ))
                 }
             </Swiper>
-
         </section>
-    )
+    ) : <p>Loading</p>
 }
 
 
@@ -101,8 +98,8 @@ function Post({ data }) {
             </div>
             <div className="info flex justify-center flex-col py-4">
                 <div className="cat">
-                    <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || "No Category"}</a></Link>
-                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">- {published || ""}</a></Link>
+                    {/* <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || "No Category"}</a></Link> */}
+                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">{published || ""}</a></Link>
                 </div>
                 <div className="title">
                     <Link href={`/posts/${id}`}><a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">{title || "No Title"}</a></Link>

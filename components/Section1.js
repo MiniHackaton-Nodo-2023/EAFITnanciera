@@ -87,8 +87,6 @@ export default function Section1() {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
-    let myQuotes = []
-
     useEffect(() => {
         const fetchQuotes = async () => {
             setIsLoadingQuotes(true);
