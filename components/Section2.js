@@ -5,7 +5,7 @@ import fetcher from '../lib/fetcher'
 import Spinner from "./_child/spinner"
 import Error from "./_child/error"
 
-export default function section2() {
+export default function Section2() {
 
     const { data, isLoading, isError } = fetcher('api/posts')
 

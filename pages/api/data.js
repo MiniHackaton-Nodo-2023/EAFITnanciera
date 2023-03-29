@@ -3,22 +3,92 @@ export default {
     Quotes: [
         {
             id: 1,
-            title: "Frase de la Roca",
-            subtitle: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-            category: "HTB, CTF",
+            title: "¿Qué es EAFITNanciera?",
+            subtitle: "",
+            category: "",
             img: "/images/theRockSuit.jpg",
             description: `
-            "Si estas esperando que la luz de tráfico cambie a verde, este portal
-            de educación financiera es la luz verde".
+            Si las deudas te atormentan, NO sabes en qué invertir
+            Y tue cuenta está en $0. ¡Este portal educativo es para ti!.
             `,
-            published: "Jul 3,  2022",
+            published: "29 Mar,  2023",
             author: {
                 name: "La Roca lo dijo",
                 img: "/images/TheRock.webp",
+                designation: "Actor estadounidense y exluchador profesional."
+            }
+        },
+        {
+            id: 2,
+            title: "No esperes para comenzar el viaje",
+            subtitle: "Realizó el curso Inversiones",
+            category: "",
+            img: "/images/R-kiyosaki.jpg",
+            description: `
+            "El dinero no es una motivación para mí, pero sí es importante porque mi familia y yo necesitamos de él para vivir."
+            `,
+            published: "29 Mar,  2023",
+            author: {
+                name: "Robert Kiyosaki",
+                img: "/images/R-kiyosaki.jpg",
+                designation: "autor de Padre Rico, Padre pobre"
+            }
+        },
+        {
+            id: 3,
+            title: "Dinero como medio para VIVIR",
+            subtitle: "Realizó el curso Ahorro",
+            category: "",
+            img: "/images/cristiano-ronaldo-suit-men.jpg",
+            description: `
+            El dinero no es una Motivación para mí, pero sí es importante
+            porque mi familia y yo necesitamos de él para vivir.
+            `,
+            published: "29 Mar,  2023",
+            author: {
+                name: "Cristiano (The Best) Ronaldo",
+                img: "/images/cristiano-ronaldo-suit-men.jpg",
+                designation: "El señor de los records (Mr. Champions)"
+            }
+        },
+        {
+            id: 4,
+            title: "Entender antes de Invertir",
+            subtitle: "Realizó el curso Inversiones y el de Presupuestos",
+            category: "",
+            img: "/images/Musk-3.webp",
+            description: `
+            Debes tener un buen entendimiento de las finanzas para tener éxito
+            en los negocios.
+            `,
+            published: "29 Mar,  2023",
+            author: {
+                name: "Elon Musk",
+                img: "/images/Musk-3.webp",
+                designation: "El Bufón de Twitter"
+            }
+        },
+    ],
+    Courses: [
+        {
+            id: 1,
+            title: "Ahorro",
+            subtitle: "",
+            category: "HTB, CTF",
+            img: "/images/articles/img1.jpg",
+            description: `
+            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
+            far World of Grammar.
+            `,
+            published: "Jul 3,  2022",
+            author: {
+                name: "Juan Manuel Young Hoyos",
+                img: "/images/author/avatar.png",
                 designation: "Pentester"
             }
-        }
+        },
     ],
+
     Trending: [
         {
             id: 1,

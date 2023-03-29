@@ -6,16 +6,64 @@ import fetcher from '../lib/fetcher'
 import Spinner from "./_child/spinner"
 import Error from "./_child/error"
 
-export default function section3() {
+import { useEffect, useState } from 'react';
 
-    const { data, isLoading, isError } = fetcher('api/popular')
+
+export default function Section3() {
+    const [quotes, setQuotes] = useState([]);
+    const [isLoadingQuotes, setIsLoadingQuotes] = useState(false);
+    const [isErrorQuotes, setIsErrorQuotes] = useState(false);
+
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
+
+    let myQuotes = []
+
+    useEffect(() => {
+        const fetchQuotes = async () => {
+            setIsLoadingQuotes(true);
+            setIsErrorQuotes(false);
+            try {
+                const response = await fetch('http://localhost:3000/api/quotes');
+                const data = await response.json();
+                setQuotes(data);
+            } catch (error) {
+                setIsErrorQuotes(true);
+            }
+            setIsLoadingQuotes(false);
+        };
+
+        const fetchData = async () => {
+            setIsError(false);
+            try {
+                const response = await fetch('http://localhost:3000/api/popular');
+                const data = await response.json();
+                console.log(data)
+                setData(data);
+            } catch (error) {
+                setIsError(true);
+            }
+            setIsLoading(false);
+        };
+
+        fetchQuotes();
+        fetchData();
+    }, [isLoading]);
 
     if (isLoading) return <Spinner></Spinner>;
     if (isError) return <Error></Error>
+    if (isLoadingQuotes) return <Spinner></Spinner>;
+    if (isErrorQuotes) return <Error></Error>
+
+    // const { data, isLoading, isError } = fetcher('api/popular')
+
+    // if (isLoading) return <Spinner></Spinner>;
+    // if (isError) return <Error></Error>
 
     return (
         <section className="container mx-auto md:px-20 py-16">
-            <h1 className="font-bold text-4xl py-12 text-center">Most Popular</h1>
+            <h1 className="font-bold text-4xl py-12 text-center">Nuestros Temarios</h1>
 
             {/* swiper */}
             <Swiper

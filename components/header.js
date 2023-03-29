@@ -13,6 +13,9 @@ export default function header() {
                         <Link href={"/"}>
                             <a className="uppercase text-1xl">Temario</a>
                         </Link>
+                        <Link href={"/"}>
+                            <a className="uppercase text-1xl">Actividades</a>
+                        </Link>
                     </div>
                 </div>
                 <div className="shrink w-180 sm:order-2">
@@ -22,7 +25,7 @@ export default function header() {
                 </div>
                 <div className="w-96 order-3 flex justify-center">
                     <div className="flex gap-6">
-                        <Link href={"/"}><a><ImGithub color="#888888" /></a></Link>
+                        <Link href={"https://github.com/MiniHackaton-Nodo-2023/EAFITnanciera"}><a><ImGithub color="#888888" /></a></Link>
                         <Link href={"/"}><a><ImTwitter color="#888888" /></a></Link>
                         <Link href={"/"}><a><ImYoutube color="#888888" /></a></Link>
                     </div>

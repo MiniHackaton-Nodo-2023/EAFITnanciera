@@ -12,20 +12,22 @@ import Error from "./_child/error"
 
 import { useEffect, useState } from 'react';
 
-
 function Quote({ data }) {
-    const { id, title, category, img, published, description, author } = data;
+    const { id, title, subtitle, category, img, published, description, author } = data;
 
     return (
         <div className="grid md:grid-cols-2">
             <div className="info flex justify-center flex-col">
                 <div className="cat">
-                    <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</a></Link>
-                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">- {published || "Unknown"}</a></Link>
+                    {/* <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || ""}</a></Link>
+                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">{published || "Unknown"}</a></Link> */}
                 </div>
                 <div className="title">
                     <Link href={`/posts/${id}`}><a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">{title || "Unknown"}</a></Link>
                 </div>
+                <p className="text-gray-500 py-3">
+                    {subtitle || ""}
+                </p>
                 <p className="text-gray-500 py-3">
                     {description || "description"}
                 </p>
@@ -45,7 +47,7 @@ function Quote({ data }) {
 
 function Slide({ data }) {
 
-    const { id, title, category, img, published, description, author } = data;
+    const { id, title, subtitle, category, img, published, description, author } = data;
 
     return (
         <div className="grid md:grid-cols-2">
@@ -58,12 +60,15 @@ function Slide({ data }) {
             </div>
             <div className="info flex justify-center flex-col">
                 <div className="cat">
-                    <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</a></Link>
-                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">- {published || "Unknown"}</a></Link>
+                    {/* <Link href={`/posts/${id}`}><a className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</a></Link>
+                    <Link href={`/posts/${id}`}><a className="text-gray-800 hover:text-gray-600">- {published || "Unknown"}</a></Link> */}
                 </div>
                 <div className="title">
                     <Link href={`/posts/${id}`}><a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">{title || "Unknown"}</a></Link>
                 </div>
+                <p className="text-gray-500 py-3">
+                    {subtitle || ""}
+                </p>
                 <p className="text-gray-500 py-3">
                     {description || "description"}
                 </p>
@@ -73,10 +78,7 @@ function Slide({ data }) {
     )
 }
 
-export default function section1() {
-
-
-    const [name, setName] = useState("");
+export default function Section1() {
     const [quotes, setQuotes] = useState([]);
     const [isLoadingQuotes, setIsLoadingQuotes] = useState(false);
     const [isErrorQuotes, setIsErrorQuotes] = useState(false);
@@ -133,17 +135,13 @@ export default function section1() {
     return quotes && data ? (
         <section className="py-16" style={bg}>
             <div className="container mx-auto md:px-20">
-                {/* <Quote data={quotes}></Quote> */}
-                <h1 className="font-bold text-4xl py-12">¿Qué es EAFITNanciera?</h1>
-                <h2>Para quienes creen que el dinero lo hace todo y terminan haciendo todo por dinero,</h2>
                 {quotes ? <Quote data={quotes[0]}></Quote> : <h1>No Hay datos</h1>}
-                <p>
-                    "Si eres el tipo de persona que está esperando que ocurra 'lo correcto', puede que esperes por un largo tiempo. Es como esperar que todas las luces de tráfico estén verdes antes de comenzar el viaje".
-                    Robert Kiyosaki, autor de Padre Rico, Padre pobre.
-                </p>
             </div>
+            <br />
+            <br />
+            <br />
             <div className="container mx-auto md:px-20">
-                <h1 className="font-bold text-4xl pb-12 text-center">Lo más popular</h1>
+                <h1 className="font-bold text-4xl pb-12 text-center">Dicho por los Titanes de las Finanzas</h1>
 
                 <Swiper
                     slidesPerView={1}
@@ -153,7 +151,7 @@ export default function section1() {
                     }}
                 >
                     {
-                        data.map((value, index) => (
+                        quotes.slice(1).map((value, index) => (
                             <SwiperSlide key={index}>
                                 <Slide data={value}></Slide>
                             </SwiperSlide>
