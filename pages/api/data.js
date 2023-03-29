@@ -77,8 +77,7 @@ export default {
             category: "Análisis, Finanzas",
             img: "/images/articles/img1.jpg",
             description: `
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
-            far World of Grammar.
+            Trata sobre ahorrar.
             `,
             published: "Jul 3,  2023",
             author: {

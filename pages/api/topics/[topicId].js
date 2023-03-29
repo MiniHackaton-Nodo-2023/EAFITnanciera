@@ -1,13 +1,13 @@
 import data from '../data'
 
 
-// api/posts/1
+// api/Courses/1
 export default function handler(req, res) {
-    const { postId } = req.query;
-    const { Posts } = data;
+    const { topicId } = req.query;
+    const { Courses } = data;
 
-    if (postId) {
-        const post = Posts.find(value => value.id == postId)
+    if (topicId) {
+        const post = Courses.find(value => value.id == topicId)
         return res.status(200).json(post)
     }
 

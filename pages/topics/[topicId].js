@@ -2,7 +2,7 @@ import Format from '../../layout/format'
 import Author from '../../components/_child/author'
 import Image from 'next/image'
 import Ralated from '../../components/_child/ralated'
-import getPost from '../../lib/helper'
+import getTopics from '../../lib/helper_2'
 import fetcher from '../../lib/fetcher';
 import Spinner from '../../components/_child/spinner'
 import ErrorComponent from '../../components/_child/error'
@@ -12,8 +12,8 @@ import { SWRConfig } from 'swr'
 export default function Page({ fallback }) {
 
     const router = useRouter()
-    const { postId } = router.query;
-    const { data, isLoading, isError } = fetcher(`api/posts/${postId}`)
+    const { topicId } = router.query;
+    const { data, isLoading, isError } = fetcher(`api/topics/${topicId}`)
 
     if (isLoading) return <Spinner></Spinner>
     if (isError) return <ErrorComponent></ErrorComponent>
@@ -59,23 +59,23 @@ function Article({ title, img, subtitle, description, author }) {
 
 
 export async function getStaticProps({ params }) {
-    const posts = await getPost(params.postId)
+    const topics = await getTopics(params.topicId)
 
     return {
         props: {
             fallback: {
-                '/api/posts': posts
+                '/api/topics': topics
             }
         }
     }
 }
 
 export async function getStaticPaths() {
-    const posts = await getPost();
-    const paths = posts.map(value => {
+    const topics = await getTopics();
+    const paths = topics.map(value => {
         return {
             params: {
-                postId: value.id.toString()
+                topicId: value.id.toString()
             }
         }
     })
