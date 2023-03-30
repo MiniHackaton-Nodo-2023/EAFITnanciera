@@ -9,7 +9,7 @@ export default {
             img: "/images/theRockSuit.jpg",
             description: `
             Si las deudas te atormentan, NO sabes en qué invertir
-            Y tue cuenta está en $0. ¡Este portal educativo es para ti!.
+            Y tu cuenta está en $0. ¡Este portal educativo es para ti!
             `,
             published: "29 Mar,  2023",
             author: {
